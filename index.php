@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+<?php include_once("./connection.php"); ?>
+
 <!DOCTYPE html>
 <html>
 <title>Gota de Chocolate</title>
@@ -39,8 +42,15 @@
 <body>
 
 
-<?php include("./login.logout/navbarUser.php"); ?>
-
+<?php
+  if(isset($_SESSION['admin'])){
+    include("./login.logout/navbarAdm.php");
+  } else{
+    include("./login.logout/navbarUser.php");
+  }
+ 
+?>
+<!-- quando mexer de novo puxar os dados dos produtos pela base de dados usando o mesmo metodo do ./.login.logout/dados.php -->
 
 <!-- Header with full-height image -->
 <header class="bgimg w3-display-container w3-grayscale-min" id="home">
