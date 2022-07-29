@@ -69,45 +69,9 @@
   </div>
 </header>
 
+
 <!-- Products Section -->
-<div class="w3-container" style="padding:128px 16px" id="Products">
-  <h3 class="w3-center">PRODUCTS</h3>
-  
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-  <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="Imagens/1.jpg" alt="M" center>
-        <div class="w3-container">
-        <h3>Preço = 15€</h3>
-          <p class="w3-opacity">Box's chocolates tipo 3</p>
-          <p> nooo seeeeeee</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="Imagens/2.jpg" alt="M" center>
-        <div class="w3-container">
-        <h3>Preço = 15€</h3>
-          <p class="w3-opacity">Box s chocolates tipo 3</p>
-          <p> nooo seeeeeee</p>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="Imagens/3.jpg" alt="M" center>
-        <div class="w3-container">
-        <h3>Preço = 15€</h3>
-          <p class="w3-opacity">Box's chocolates tipo 3</p>
-          <p> nooo seeeeeee</p>
-        </div>
-      </div>
-    </div>
-</div>
+<?php include_once("./login.logout/products.php"); ?>
 
 
 <!-- Team Section -->

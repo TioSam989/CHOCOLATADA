@@ -16,55 +16,54 @@ function addJS(url, attr, subAttr){ //funcao ainda nao terminada que vai fazer p
 </script>
     
 <html>
-<title>Chocolatada</title>
 <head>
-<link rel ="shortcut icon" href="favicon.png" type="image/x-icon" > 
-<link rel ="icon" href="favicon.png" type="image/x-icon" >  
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<!-- <link rel="stylesheet" href="https:///cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+	<title>Chocolatada</title>
+	<link rel ="shortcut icon" href="favicon.png" type="image/x-icon" > 
+	<link rel ="icon" href="favicon.png" type="image/x-icon" >  
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<!-- <link rel="stylesheet" href="https:///cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <style>img[alt="www.000webhost.com"]{display:none;}</style>
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
+		
+	body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+	body, html {
+	height: 100%;
+	line-height: 1.8;
+	}
+	/* Full height image header */
+	.bgimg {
+	background-position: center;
+	background-size: cover;
+	background-image: url("Imagens/choc.jpg");
+	min-height: 100%;
+	}
 
-/* Full height image header */
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: url("Imagens/choc.jpg");
-  min-height: 100%;
-}
+	.w3-bar .button {
+	padding: 16px;
+	}
+	.float{
+		position:fixed;
+		width:60px;
+		height:60px;
+		bottom:40px;
+		right:40px;
+		background-color:#0C9;
+		color:#FFF;
+		border-radius:50px;
+		text-align:center;
+		box-shadow: 2px 2px 3px #999;
+	}
 
-.w3-bar .button {
-  padding: 16px;
-}
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#0C9;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
-}
-
-.my-float{
-	margin-top:22px;
-}
+	.my-float{
+		margin-top:22px;
+	}
 </style>
-
 <body>
 <style>
 	.listPlace{
@@ -72,10 +71,8 @@ body, html {
 	}
 </style>
 
-<!-- Navbar (sit on top) -->
 
 
-<!-- Sidebar on small screens when clicking the menu icon -->
 <?php
  if(isset($_SESSION['admin'])){ //se estiver logado na conta do ADM vai mostrar a NAVBAR do ADM e nao a normal
 	?>
