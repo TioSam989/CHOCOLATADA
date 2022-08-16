@@ -10,7 +10,7 @@
       <a href="#About" class="w3-bar-item button"><i class="fa fa-question"> </i>ABOUT US</a>
       <a href="#contact" class="w3-bar-item button"><i class="fa fa-question"> </i>CONTACT</a>
 
-      <a href="Login.Logout/login.html" class="w3-bar-item button"><i class="fa fa-envelope"></i>LOGIN</a>
+      <a href="Login.Logout/login.php" class="w3-bar-item button"><i class="fa fa-envelope"></i>LOGIN</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -29,7 +29,7 @@
   <a href="#About" onclick="w3_close()" class="w3-bar-item button">ABOUT US</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item button">CONTACT</a>
 
-  <a href="Login.Logout/login.html" onclick="w3_close()" class="w3-bar-item button">LOGIN</a>
+  <a href="Login.Logout/login.php" onclick="w3_close()" class="w3-bar-item button">LOGIN</a>
   <a href="javascript:void(0)" class="w3-bar-item button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
     <i class="fa fa-bars"></i>
   </a>
