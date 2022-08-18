@@ -10,7 +10,20 @@
       <a href="#About" class="w3-bar-item button"><i class="fa fa-question"> </i>ABOUT US</a>
       <a href="#contact" class="w3-bar-item button"><i class="fa fa-question"> </i>CONTACT</a>
 
-      <a href="Login.Logout/login.php" class="w3-bar-item button"><i class="fa fa-envelope"></i>LOGIN</a>
+      <?php 
+        if(isset($_SESSION['valid'])){
+          ?>
+            <a href="Login.Logout/logout.php" class="w3-bar-item button"><i class="fa fa-envelope"></i>LOGOUT</a>
+          <?php
+
+        }else{
+          ?>
+            <a href="Login.Logout/login.php" class="w3-bar-item button"><i class="fa fa-envelope"></i>LOGIN</a>
+          <?php
+        }
+      ?>
+
+
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 

@@ -45,8 +45,6 @@
 <?php
   if(isset($_SESSION['admin'])){
     include("./login.logout/navbarAdm.php");
-  } else if(isset($_SESSION['valid'])){
-    //falta colocar o codigo de usuario logado
   }else{
     include("./login.logout/navbarUser.php");
   }

@@ -1,5 +1,5 @@
 <?php
 session_start();
-unset($_SESSION['validado']);
+unset($_SESSION['valid']);
 header("Location:../index.php");
 ?>
