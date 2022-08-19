@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include_once("../login.logout/config.php") ?>
+<?php include_once("../connection.php") ?>
 <?php session_start(); ?>
 <?php 
     function alertar($msg){ //funcao pra alertar (so uso para testes)
@@ -8,6 +8,10 @@
     function JSredirect($URL){ //funcao para redirecionar paginas usando JavaScript
         echo '<script>document.location = "'.$URL.'"</script>';
     }
+
+	if(!isset($_SESSION['admin'])){
+		header("Location: ../index.php");
+	}
 ?>
 <script>
 function addJS(url, attr, subAttr){ //funcao ainda nao terminada que vai fazer parte do carrinho(depois explico melhor)
@@ -29,41 +33,8 @@ function addJS(url, attr, subAttr){ //funcao ainda nao terminada que vai fazer p
 </head>
 
 <style>img[alt="www.000webhost.com"]{display:none;}</style>
-<style>
-		
-	body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-	body, html {
-	height: 100%;
-	line-height: 1.8;
-	}
-	/* Full height image header */
-	.bgimg {
-	background-position: center;
-	background-size: cover;
-	background-image: url("Imagens/choc.jpg");
-	min-height: 100%;
-	}
 
-	.w3-bar .button {
-	padding: 16px;
-	}
-	.float{
-		position:fixed;
-		width:60px;
-		height:60px;
-		bottom:40px;
-		right:40px;
-		background-color:#0C9;
-		color:#FFF;
-		border-radius:50px;
-		text-align:center;
-		box-shadow: 2px 2px 3px #999;
-	}
-
-	.my-float{
-		margin-top:22px;
-	}
-</style>
+<link rel="stylesheet" href="dadosStyle.css">
 <body>
 <style>
 	.listPlace{
@@ -76,10 +47,9 @@ function addJS(url, attr, subAttr){ //funcao ainda nao terminada que vai fazer p
 <?php
  if(isset($_SESSION['admin'])){ //se estiver logado na conta do ADM vai mostrar a NAVBAR do ADM e nao a normal
 	?>
-	<?php session_start(); ?>
 
 	<div class="w3-top">
-	  <div class="w3-bar w3-black w3-card" id="Navbar">
+	  <div class="w3-bar w3-black w3-card" id="Navbar" style="margin-bottom:1rem;">
 		<a href="#home" class="w3-bar-item button w3-wide"><img src="../Imagens/gota.jfif" height="60" width="80"></a>
 		<!-- Right-sided navbar links -->
 		<div class="w3-right w3-hide-medium">
@@ -113,19 +83,11 @@ function addJS(url, attr, subAttr){ //funcao ainda nao terminada que vai fazer p
 	</div>
 	<?php
  }else{ //caso nao esteja logado com o ADM vai mostrar a qualquer outro a NAVBAR normal
-  include("../pages/navBar.php");
+  include("../navBar.php");
  }
  
  ?>
-<?php
- if((isset($_SESSION['validado'])) ){ //se tiver logado em alguma conta "normal" vai mostrar um icone de carrinho flutuante
- ?>
-   <a href="../login.logout/cart.php" class="float" style="z-index: 100;">
-    <i class="fa fa-plus fa-shopping-basket my-float"></i>
-  </a>
-  <?php
-}
-   ?>
+
  <div class="listPlace" >
 	
 
@@ -162,13 +124,31 @@ if($mysqli){//verifica se ha ligacao com a DB
 	</style>
 
 <!-- Header with full-height image -->
-<?php include("../pages/headerIMG.php"); ?>
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:0cm">
+    <span class="w3-jumbo w3-hide-small" >The best chocolate</span><br>
+
+  </div> 
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+    
+    <a href=""><i class="fa fa-facebook-official w3-hover-opacity" ></i></a>
+    <a href=""><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-snapchat w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href=""><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+</header>
 
 <?php
 if($mysqli){// verificar se ha conexao com a DB
 	echo "<div>";
-	echo "<form method='POST' action=''>";
+	echo "<form method='POST' style='margin-top:5rem;' action=''>";
 
+	echo "<div class='container'>";
+	echo "<div class='row'>";
+
+	
 	echo "<h1>Todos</h1>";
 	
 	echo "<button name='novinhos' >Ver Somente Novos</button>";
@@ -176,6 +156,8 @@ if($mysqli){// verificar se ha conexao com a DB
 	echo "<button name='desativadinhos'>Ver somente Desativados</button>";
 	echo "</div>";
 	
+	echo "</div>";
+	echo "</div>";
 	echo "</form>";
 	
 	if(isset($_POST['novinhos'])){
@@ -277,7 +259,7 @@ if($mysqli){// verificar se ha conexao com a DB
 }
 ?>
     <!-- Footer -->
-   <?php include("../pages/footer.php"); ?>
+   
 
 
 </body>

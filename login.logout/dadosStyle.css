@@ -1,0 +1,33 @@
+	
+	body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+	body, html {
+	height: 100%;
+	line-height: 1.8;
+	}
+	/* Full height image header */
+	.bgimg {
+	background-position: center;
+	background-size: cover;
+	background-image: url("Imagens/choc.jpg");
+	min-height: 100%;
+	}
+
+	.w3-bar .button {
+	padding: 16px;
+	}
+	.float{
+		position:fixed;
+		width:60px;
+		height:60px;
+		bottom:40px;
+		right:40px;
+		background-color:#0C9;
+		color:#FFF;
+		border-radius:50px;
+		text-align:center;
+		box-shadow: 2px 2px 3px #999;
+	}
+
+	.my-float{
+		margin-top:22px;
+	}

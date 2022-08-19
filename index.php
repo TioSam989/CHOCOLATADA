@@ -69,20 +69,45 @@
   </div>
 </header>
 
+<?php
 
-<!-- Products Section -->
-<?php include_once("./login.logout/products.php"); ?>
+if(isset($_SESSION['admin'])){
+
+?>
+
+<div class="container"  >
+
+  <div class="row">
+    <div></div>
+    <img src="https://i.pinimg.com/originals/ef/4c/23/ef4c232dab28b7581497cee047f21969.gif"  alt="idk wat u gonna put here">
+      <img src="https://i.pinimg.com/originals/ef/4c/23/ef4c232dab28b7581497cee047f21969.gif"  alt="idk wat u gonna put here">
+    <img src="https://i.pinimg.com/originals/ef/4c/23/ef4c232dab28b7581497cee047f21969.gif"  alt="idk wat u gonna put here">
+  </div>
+</div>
+
+<?php
+
+}else{
+
+?>
+  
+      <!-- Products Section -->
+      <?php include_once("./login.logout/products.php"); ?>
 
 
-<!-- Team Section -->
-<?php include_once("./login.logout/team.php"); ?>
+      <!-- Team Section -->
+      <?php include_once("./login.logout/team.php"); ?>
 
-<!-- About Section -->
-<?php include_once("./login.logout/about.php"); ?>
+      <!-- About Section -->
+      <?php include_once("./login.logout/about.php"); ?>
 
-<!-- Contact Section -->
-<?php include_once("./login.logout/contact.php"); ?>
+      <!-- Contact Section -->
+      <?php include_once("./login.logout/contact.php"); ?>
 
+  <?php
+}
+
+?>
 <!-- Footer -->
 <?php include_once("./login.logout/footer.php"); ?>
  
