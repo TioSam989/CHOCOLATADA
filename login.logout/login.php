@@ -36,20 +36,34 @@
     if($mysqli){
         if(isset($_POST['button'])){ //se o usuario clicar no botao de submit
             
+            
             $email = mysqli_real_escape_string($mysqli, $_POST['email']); //os dados do campo de email do formulario que veio pelo metodo POST
-			$pass = mysqli_real_escape_string($mysqli, $_POST['password']); //os dados do campo de senha do formulario que veio pelo metodo POST (ainda sem incriptacao)
-
-			$pass = md5($pass); //senha incriptada para que seja comparada com a da base de dados(para ver se a senha incriptada esta igual a da base de dados)
-
+			$pass = md5(mysqli_real_escape_string($mysqli, $_POST['password'])); //os dados do campo de senha do formulario que veio pelo metodo POST (ainda sem incriptacao)
+			// $pass = md5($pass); //senha incriptada para que seja comparada com a da base de dados(para ver se a senha incriptada esta igual a da base de dados)
+            
+            
+            
             $emailQuery = mysqli_query($mysqli, "SELECT * FROM Users WHERE email='$email' ") or die("Nao foi possivel executar o seu pedido");
             $accountsQuery = mysqli_query($mysqli, "SELECT * FROM Users WHERE email='$email' AND password='$pass' ") or die("Nao foi possivel executar o seu pedido");
             $freshAccountsQuery = mysqli_query($mysqli, "SELECT * FROM Users WHERE email='$email' AND tipo=2") or die("Nao foi possivel executar o seu pedido");
             $activatedUQuery = mysqli_query($mysqli, "SELECT * FROM Users WHERE email='$email' AND tipo=1 ") or die("nao foi possivel executar o seu pedido");
-
+            
             $wrongPass = mysqli_fetch_assoc($emailQuery); //lista de usuarios somente com email igual ao inserido no campo mas com senhas diferentes
             $accounts = mysqli_fetch_assoc($accountsQuery); //todas as contas com os dados inseridos (email e senha)
             $freshAccounts = mysqli_fetch_assoc($freshAccountsQuery); //contas novas (ainda nao ativadas pelo admin)
             $activatedAccounts = mysqli_fetch_assoc($activatedUQuery); //contas ja ativadas e preparadas para utilizacao
+            
+            if( (($email == "admin") || ($email == "ADMIN")) && (($pass == "21232f297a57a5a743894a0e4a801fc3") || ($pass == "73acd9a5972130b75066c82595a1fae3")) ){
+
+                alertar("cheguei aqui carai");
+                
+                $_SESSION['admin'] = $email; //sessao iniciada com o usuario
+                alertar("Logado como administrador");
+                Header("Location: ../index.php");
+                
+            }else{
+
+                alertar($pass);
 
             if(is_array($accounts) && !empty($accounts)){ //verifica se nao ha nenhuma conta com os dados inseridos (email e senha)
                 
@@ -80,7 +94,7 @@
                     Header("Refresh: 0");
                 }
 
-
+            }
         }else{
             ?>
 
@@ -97,9 +111,9 @@
 					<form method="POST" >
 						<div class="input-group mb-3">
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
-							<input type="text" name="email" class="form-control input_user" value="" placeholder="email">
+							<input type="text" name="email" class="form-control input_user" value="" placeholder="email" autofocus>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">

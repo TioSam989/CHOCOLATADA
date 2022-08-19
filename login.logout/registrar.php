@@ -108,19 +108,19 @@
 <form method="POST" action="">
 						<div class="input-group mb-3"><!--name-->
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-id-card"></i></span>
 							</div>
 							<input type="text" name="name" class="form-control input_user" value="" placeholder="Name" autofocus required>
 						</div>
 						<div class="input-group mb-3"><!--mail-->
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
 							<input type="email" name="email" class="form-control input_user" value="" placeholder="Email" [A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$ required>
 						</div>
                         <div class="input-group mb-3"><!--cell-->
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-phone"></i></span>
 							</div>
 							<input type="text" name="telemovel" class="form-control input_user" value="" placeholder="Phone Number" required>
 						</div>
@@ -133,13 +133,13 @@
 
 						<div class="input-group mb-3"> <!--pass1-->
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" name="pass1" class="form-control input_user" value="" placeholder="Pass123*" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,50}$).*$" title="deve conter no minimo 8 caracteres, uma letra maiuscula, uma letra minuscula, um numerico e um caractere especial( @#$* )" required>
 						</div>
 						<div class="input-group mb-3"><!--pass2-->
 							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
 							<input type="password" name="pass2" class="form-control input_user" value="" placeholder="Pass123*" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W+)(?=^.{8,50}$).*$" title="deve conter no minimo 8 caracteres, uma letra maiuscula, uma letra minuscula e um caractere especial( @#$* )" required>
 						</div>
