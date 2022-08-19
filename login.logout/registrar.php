@@ -122,7 +122,9 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-phone"></i></span>
 							</div>
-							<input type="text" name="telemovel" class="form-control input_user" value="" placeholder="Phone Number" required>
+							<input type="number" name="telemovel" class="form-control input_user" value=""  placeholder="Phone Number" required>
+							
+						
 						</div>
                         <div class="input-group mb-3"><!--username-->
 							<div class="input-group-append">

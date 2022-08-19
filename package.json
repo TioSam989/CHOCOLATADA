@@ -1,0 +1,23 @@
+{
+  "name": "chocolatada",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./script/script.js",
+  "scripts": {
+    "e2e-bg": "testcafe chrome:headless myTest.ts --skip-js-errors --speed 0.4",
+    "e2e": "testcafe chrome myTest.ts --skip-js-errors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TioSam989/CHOCOLATADA.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TioSam989/CHOCOLATADA/issues"
+  },
+  "homepage": "https://github.com/TioSam989/CHOCOLATADA#readme",
+  "devDependencies": {
+    "testcafe": "^1.20.1"
+  }
+}

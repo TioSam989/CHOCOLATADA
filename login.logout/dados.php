@@ -176,8 +176,10 @@ if($mysqli){// verificar se ha conexao com a DB
   if(is_array($linha) && !empty($linha)){ //verificar se realmente ha dados
     while($linha){ // enquanto tiver daoos pra mostrar ele vai mostrar na tela
 	$id = $linha['Id_user'];
+	$nomeUs = $linha['Nome'];
+
 	 echo "<div>";
-     echo " <div class='w3-third  bruhOutContainer' style='padding:1rem;'>";
+     echo " <div class='w3-third bruhOutContainer' id='$nomeUs' style='padding:1rem;'>";
      echo "<div class='w3-card bruhContainer'>";
      echo "  <div class='w3-container'>";
 	 echo "    <h2><strong></strong>".$linha['Nome']."</h2>";
