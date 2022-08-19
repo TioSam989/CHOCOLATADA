@@ -55,7 +55,7 @@
                 
                 
                 if(is_array($freshAccounts) && !empty($freshAccounts)){ //verifica se nao ha nenhuma conta NOVA com esses dados (contas ainda nao ativadas)
-                    alertar("cheguei aqui");
+                    // alertar("cheguei aqui");
                     alertar("Conta ainda nao foi ativada, peça ao administrador para que a ative"); 
                     header("Refresh: 0"); //recarregar a pagina
                     }else{ //se achar alguma conta que nao seja NOVA faca isso...
@@ -124,7 +124,7 @@
 		
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="registar.php" class="ml-2">Sign Up</a>
+						Don't have an account? <a href="registrar.php" class="ml-2">Sign Up</a>
 					</div>
 
 					<!-- Esqueci-me da senha

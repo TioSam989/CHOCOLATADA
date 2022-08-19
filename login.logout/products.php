@@ -27,9 +27,22 @@
               <div class="w3-card">
                 <img src="Imagens/<?php echo $local; ?>" alt="Chocolate image" center>
                 <div class="w3-container">
-                <h3>Preço = <?php echo $price; ?>€</h3>
-                  <p class="w3-opacity"><?php echo $nome; ?></p>
-                  <p> <?php echo $categoria; ?></p>
+                  <h3 ><?php echo $nome; ?></h3>
+                  <p class="w3-opacity">Preço = <?php echo $price; ?>€</p>
+                  <p> Categoria: <?php echo $categoria; ?></p>
+                  <?php
+                    if(isset($_SESSION['valid'])){ //se tiver alguem logado faça isso...
+                      ?>
+                      <!-- ainda nem funciona, falta fazer o sistema do carrinho, quando isso estiver pronto ai faco -->
+                        <button style="float:right; margin: 1rem">Add to cart</button> <!-- botao de adicionar ao carrinho -->
+                        
+                      <?php
+                    }else{ //se nao, faça isso...
+                      ?>
+                        <button disabled title="para adicionar o item ao carrinho, logue em uma conta"  style="float:right; margin: 1rem">Add to cart</button> <!-- botao de adicionar ao carrinho desativado, pois nao ta logado -->
+                      <?php
+                    }
+                  ?>
                 </div>
               </div>
             </div>
