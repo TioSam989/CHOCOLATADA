@@ -10,6 +10,7 @@
                 <th>Product Name</th>
                 <th>quantidade</th>
                 <th>preço</th>
+                <th>operação</th>
                 </tr>
                 
 
@@ -43,9 +44,13 @@ if($mysqli){
         $row_count = mysqli_num_rows($resultado);
         // consolepramim("total de $row_count");
 
+        $idCartN = null;
+        $idCartO = null;
+
 
         while($linha){
     
+                $idCartN = $linha['id_carrinho'];
 
             $idItemAtual = $linha['id_items'];
 
@@ -55,8 +60,8 @@ if($mysqli){
                     
                     $indexItem++;
                     if($indexItem == 1){
-                        consolepramim("Abrindo...");
-                        consolepramim("  ");
+                        echo "<tr>";
+
 
                     }
                     // consolepramim("Tenho um total de $indexItem produtos");
@@ -67,9 +72,22 @@ if($mysqli){
                         
                         $preco = $prod['price'];
                         $totalProduto = $preco*$indexItem;
-                        consolepramim("meu total é $totalProduto");
-                        consolepramim("  ");
-                        consolepramim("Fechando...");
+
+                        $localD = $prod['localDirectory'];
+                        $idCarrinhoAtual = $prod['id_items'];
+                        
+                        ?>
+                        
+                        <th><img src="../Imagens/<?php echo $localD; ?>" alt="chocolate box" style="width:8rem;"></th>
+                        <th><?php echo $prod['nome']; ?></th>
+                        <th><?php echo $indexItem; ?></th>
+                        <th><?php echo $totalProduto; ?></th>
+
+                        <th><button><a href="./removeFromCart.php?idpc=<?php echo $idCartO;?>">Remove from cart</a></button></th>
+
+                        
+                        <?php
+                    echo "</tr>";
                             
                     }
 
@@ -80,28 +98,37 @@ if($mysqli){
                     
                     $preco = $prod['price'];
                     $totalProduto = $preco*$indexItem;
-                    consolepramim("meu total é $totalProduto");
-                    consolepramim("  ");
-                    consolepramim("Fechando...");
-                    consolepramim("Mudei de produto na linha n $indexGeral");
+                    $localD = $prod['localDirectory'];
+
+                        ?>
+                        
+                        <th><img src="../Imagens/<?php echo $localD; ?>" alt="chocolate box" style="width:8rem;"></th>
+                        <th><?php echo $prod['nome']; ?></th>
+                        <th><?php echo $indexItem; ?></th>
+                        <th><?php echo $totalProduto; ?></th>
+                        <th><button><a href="./removeFromCart.php?idpc=<?php echo $idCartO;?>">Remove from cart</a></button></th>
+                        
+                        <?php
+                    echo "</tr>";
                     $indexItem = 1;
 
                     if($indexItem == 1){
-                        consolepramim("Abrindo...");
-                        consolepramim("  ");
+                        echo "<tr>";
+
 
                     }
-                    consolepramim("Tenho um total de $indexItem produtos");
 
                 }
 
             $idItemAntigo = $idItemAtual;
             $index++;
+
+            $idCartO = $idCartN;
+
+
             $linha = mysqli_fetch_assoc($resultado); //pra parar de mostrar os dados, senao vai mostrar os mesmos dados repetidamente pra sempre
             
             $indexGeral++;
-
-
             
         }
 
