@@ -41,11 +41,11 @@ if($mysqli){
 
 
         $row_count = mysqli_num_rows($resultado);
-        consolepramim("total de $row_count");
+        // consolepramim("total de $row_count");
 
 
         while($linha){
-
+    
 
             $idItemAtual = $linha['id_items'];
 
@@ -54,7 +54,12 @@ if($mysqli){
 
                     
                     $indexItem++;
-                    consolepramim("Tenho um total de $indexItem produtos");
+                    if($indexItem == 1){
+                        consolepramim("Abrindo...");
+                        consolepramim("  ");
+
+                    }
+                    // consolepramim("Tenho um total de $indexItem produtos");
 
                     if($indexGeral == $row_count -1 ){
                         $itm = mysqli_query($mysqli, "SELECT * FROM items where Id_items='$idItemAntigo' ") or die("nao foi possivel concluir essa operacao de recolha de items");
@@ -63,7 +68,8 @@ if($mysqli){
                         $preco = $prod['price'];
                         $totalProduto = $preco*$indexItem;
                         consolepramim("meu total é $totalProduto");
-                        consolepramim("****************************************");
+                        consolepramim("  ");
+                        consolepramim("Fechando...");
                             
                     }
 
@@ -75,9 +81,16 @@ if($mysqli){
                     $preco = $prod['price'];
                     $totalProduto = $preco*$indexItem;
                     consolepramim("meu total é $totalProduto");
-                    consolepramim("****************************************");
+                    consolepramim("  ");
+                    consolepramim("Fechando...");
                     consolepramim("Mudei de produto na linha n $indexGeral");
                     $indexItem = 1;
+
+                    if($indexItem == 1){
+                        consolepramim("Abrindo...");
+                        consolepramim("  ");
+
+                    }
                     consolepramim("Tenho um total de $indexItem produtos");
 
                 }
